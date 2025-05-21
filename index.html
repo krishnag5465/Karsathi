@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learning App for Deaf and Mute</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Dual marquee styling */
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      margin-top: 30px;
+      padding: 10px 0;
+      background: linear-gradient(90deg, rgba(79, 119, 130, 1) 0%, rgba(87, 199, 133, 1) 46%, rgba(237, 221, 83, 1) 100%);
+    }
+
+    .marquee-line {
+      white-space: nowrap;
+      font-size: 4em;
+      font-weight: bold;
+      color: #344950;
+    }
+
+    .scroll-left {
+      animation: scroll-left 18s linear infinite;
+    }
+
+    .scroll-right {
+      animation: scroll-right 18s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    @keyframes scroll-right {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="path/to/logo.png" alt="Karsaathi Logo" class="logo" />
+    <h1>🧏‍♂ Karsaathi - Learn and Convert Sign Language</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="converter.html">Converter</a>
+      <a href="learn.html">Learn</a>
+      <a href="community.html">Community</a>
+      <a href="login.html" id="loginLink">Login</a>
+      <a href="#" id="logoutLink" style="display: none;" onclick="logout()">Logout</a>
+    </nav>
+    <select id="languageSelect" onchange="switchLanguage()">
+      <option value="en">English</option>
+      <option value="gu">Gujarati</option>
+    </select>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Learn and Convert Sign Language</h2>
+      <p>Convert Sign Language to English/Gujarati and Learn Easily</p>
+      <a class="btn" href="converter.html">Try Converter</a>
+    </section>
+  </main>
+
+  <!-- ✅ Dual marquee stacked above footer -->
+  <div class="marquee-container">
+    <div class="marquee-line scroll-left">🎉 Welcome to Karsaathi - Your Sign Language Learning Companion!</div>
+    <div class="marquee-line scroll-right">🙌 Let's Learn and Convert Sign Language Together!</div>
+  </div>
+
+  <script>
+    // Translations
+    const translations = {
+      en: {
+        heading: "Learn and Convert Sign Language",
+        description: "Convert Sign Language to English/Gujarati and Learn Easily",
+        convertBtn: "Try Converter"
+      },
+      gu: {
+        heading: "સાંકેતિક ભાષા શીખો અને રૂપાંતર કરો",
+        description: "સાંકેતિક ભાષાને અંગ્રેજી/ગુજરાતીમાં રૂપાંતરિત કરો અને સરળતાથી શીખો",
+        convertBtn: "કન્વર્ટર અજમાવો"
+      }
+    };
+
+    function switchLanguage() {
+      const lang = document.getElementById("languageSelect").value;
+      document.querySelector(".hero h2").innerText = translations[lang].heading;
+      document.querySelector(".hero p").innerText = translations[lang].description;
+      document.querySelector(".hero a").innerText = translations[lang].convertBtn;
+    }
+
+    // 🔐 Login/Logout Toggle
+    const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+    const loginLink = document.getElementById("loginLink");
+    const logoutLink = document.getElementById("logoutLink");
+
+    if (isLoggedIn) {
+      loginLink.style.display = "none";
+      logoutLink.style.display = "inline";
+    } else {
+      loginLink.style.display = "inline";
+      logoutLink.style.display = "none";
+    }
+
+    function logout() {
+      localStorage.removeItem("loggedIn");
+      alert("You have been logged out.");
+      window.location.href = "index.html";
+    }
+  </script>
+
+  <footer>
+    <p>Made with ❤ for Hackathon 2025</p>
+  </footer>
+</body>
+</html>

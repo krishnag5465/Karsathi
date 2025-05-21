@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #4f7782;
+background: linear-gradient(90deg, rgba(79, 119, 130, 1) 0%, rgba(87, 199, 133, 1) 46%, rgba(237, 221, 83, 1) 100%);
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 500px;
+      max-height: 600px;
+      text-align: center;
+      background: #020024;
+background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    }
+
+    .login-container h2 {
+      margin-bottom: 25px;
+      color: #acb0b6;
+    }
+
+    .form-group {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #cac2c2;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border 0.3s ease;
+      font-size: 1rem;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      outline: none;
+      border-color: #4da6ff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #4da6ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #007acc;
+    }
+
+    .link {
+      margin-top: 15px;
+      display: block;
+      color: #004d99;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form>
+      <div class="form-group">
+        <label for="username">Username or Email</label>
+        <input type="text" id="username" placeholder="Enter your username" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required />
+      </div>
+      <button type="submit">Login</button>
+      <a class="link" href="register.html">Don't have an account? Register</a>
+    </form>
+  </div>
+
+</body>
+</html>

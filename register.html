@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Karsaathi</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #b2b9bb;
+background: linear-gradient(90deg, rgba(79, 119, 130, 1) 0%, rgba(87, 199, 133, 1) 46%, rgba(237, 221, 83, 1) 100%);
+    }
+
+    .register-container {
+      background: #d7d0d0;
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+      background: #020024;
+background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    }
+
+    .register-container h2 {
+      margin-bottom: 25px;
+      color: #b2bbc5;
+    }
+
+    .form-group {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #d3c2c2;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #ccd0d4;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #4da6ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #007acc;
+    }
+
+    .link {
+      margin-top: 15px;
+      display: block;
+      color: #b6c0ca;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="register-container">
+    <h2>Create Account</h2>
+    <form>
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" placeholder="Enter your full name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Choose a username" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Create a password" required />
+      </div>
+      <button type="submit">Register</button>
+      <a class="link" href="login.html">Already have an account? Login</a>
+    </form>
+  </div>
+
+</body>
+</html>

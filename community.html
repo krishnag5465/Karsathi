@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community - Karsaathi</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .community-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f5f9fa;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      background: #020024;
+background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    }
+
+    .community-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .community-post {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .community-post h3 {
+      margin: 0 0 10px;
+      color: #2d5f6c;
+    }
+
+    .community-post p {
+      margin: 0;
+    }
+
+    .new-post {
+      margin-bottom: 40px;
+    }
+
+    .new-post textarea {
+      width: 90%;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      resize: none;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .new-post button {
+      padding: 10px 20px;
+      background: #57c785;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .new-post button:hover {
+      background: #44aa6e;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="path/to/logo.png" alt="Karsaathi Logo" class="logo" />
+    <h1>🧏‍♂ Karsaathi - Learn and Convert Sign Language</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="converter.html">Converter</a>
+      <a href="learn.html">Learn</a>
+      <a href="community.html">Community</a>
+      <a href="login.html">Login</a>
+    </nav>
+    <select id="languageSelect" onchange="switchLanguage()">
+      <option value="en">English</option>
+      <option value="gu">Gujarati</option>
+    </select>
+  </header>
+
+  <main class="community-container">
+    <div class="community-header">
+      <h2>🗣 Community Discussions</h2>
+      <p>Ask questions, share ideas, or help others learn sign language.</p>
+    </div>
+
+    <div class="new-post">
+      <textarea id="newPostText" rows="4" placeholder="Share your thoughts or ask a question..."></textarea>
+      <button onclick="addPost()">Post</button>
+    </div>
+
+    <div id="postList">
+      <!-- Dynamic posts will appear here -->
+    </div>
+  </main>
+
+  <footer>
+    <p>Made with ❤ for Hackathon 2025</p>
+  </footer>
+
+  <script>
+    function addPost() {
+      const postText = document.getElementById("newPostText").value.trim();
+      if (!postText) return;
+
+      const postList = document.getElementById("postList");
+      const postDiv = document.createElement("div");
+      postDiv.classList.add("community-post");
+      postDiv.innerHTML = `<h3>Anonymous User</h3><p>${postText}</p>`;
+      postList.prepend(postDiv);
+
+      document.getElementById("newPostText").value = "";
+    }
+
+    function switchLanguage() {
+      const lang = document.getElementById("languageSelect").value;
+      // Optional: Add Gujarati/English translation logic for this page too.
+    }
+  </script>
+</body>
+</html>
