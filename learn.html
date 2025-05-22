@@ -2,148 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Learn Sign Language</title>
+  <title>Learn - Karsathi</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
-      color: #333;
-      background: #4f7782;
-background: linear-gradient(90deg, rgba(79, 119, 130, 1) 0%, rgba(87, 199, 133, 1) 46%, rgba(237, 221, 83, 1) 100%);
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f8ff;
+      padding: 2rem;
     }
 
     header {
-      background: rgba(255, 255, 255, 0.8);
-      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: #da6fe8;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #333;
+    }
+
+    h2 {
       text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      backdrop-filter: blur(6px);
-      background: #020024;
-background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: #c2cad1;
-    }
-
-    main {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
+      margin-bottom: 2rem;
     }
 
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
     }
 
     .card {
-      background: #ffffff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-    }
-
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 15px;
-    }
-
-    .card-content h3 {
-      margin: 0 0 10px;
-      color: #006699;
-      font-size: 1.2rem;
-    }
-
-    .card-content p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    /* Tooltip */
-    .card[title] {
-      position: relative;
-    }
-
-    .card[title]:hover::after {
-      content: attr(title);
-      position: absolute;
-      bottom: 100%;
-      left: 10px;
-      background: #000;
-      color: #fff;
-      padding: 6px 10px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      white-space: nowrap;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      font-size: 2rem;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Learn Sign Language</h1>
+    <div class="logo">🧏‍♂Karsathi-Learn</div>
+    <nav>
+      <ul>
+        <li><a href="converter.html">Converter</a></li>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <div class="grid">
+  <h2>Learn Sign Language</h2>
+  <div class="grid">
+    <div class="card">A</div>
+    <div class="card">B</div>
+    <div class="card">C</div>
+    <div class="card">D</div>
+    <div class="card">E</div>
+    <div class="card">F</div>
+    <!-- Add more letters as needed -->
+  </div>
+  <script>
+  const cards = document.querySelectorAll(".card");
 
-      <div class="card" title="Click to learn A">
-        <img src="https://via.placeholder.com/300x180?text=A" alt="Sign A">
-        <div class="card-content">
-          <h3>Letter A</h3>
-          <p>This is how you show the letter A in sign language.</p>
-        </div>
-      </div>
-
-      <div class="card" title="Click to learn B">
-        <img src="https://via.placeholder.com/300x180?text=B" alt="Sign B">
-        <div class="card-content">
-          <h3>Letter B</h3>
-          <p>Practice the hand sign for letter B with this image.</p>
-        </div>
-      </div>
-
-      <div class="card" title="Click to learn Hello">
-        <img src="https://via.placeholder.com/300x180?text=Hello" alt="Sign Hello">
-        <div class="card-content">
-          <h3>Hello</h3>
-          <p>Greet someone using this sign gesture for Hello.</p>
-        </div>
-      </div>
-
-      <div class="card" title="Click to learn Thank You">
-        <img src="https://via.placeholder.com/300x180?text=Thank+You" alt="Sign Thank You">
-        <div class="card-content">
-          <h3>Thank You</h3>
-          <p>Use this sign to say Thank You respectfully.</p>
-        </div>
-      </div>
-
-    </div>
-  </main>
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const letter = card.textContent;
+      const utterance = new SpeechSynthesisUtterance(letter);
+      speechSynthesis.speak(utterance);
+    });
+  });
+</script>
 
 </body>
 </html>

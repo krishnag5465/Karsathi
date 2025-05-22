@@ -3,120 +3,186 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Learning App for Deaf and Mute</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Sign Language Translator</title>
   <style>
-    /* Dual marquee styling */
-    .marquee-container {
-      width: 100%;
-      overflow: hidden;
-      margin-top: 30px;
-      padding: 10px 0;
-      background: linear-gradient(90deg, rgba(79, 119, 130, 1) 0%, rgba(87, 199, 133, 1) 46%, rgba(237, 221, 83, 1) 100%);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
-    .marquee-line {
-      white-space: nowrap;
-      font-size: 4em;
+    body, html {
+      height: 100%;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 36px;
       font-weight: bold;
-      color: #344950;
+      color: #bc5def;
     }
 
-    .scroll-left {
-      animation: scroll-left 18s linear infinite;
+    nav a, .get-btn {
+      margin: 0 10px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
     }
 
-    .scroll-right {
-      animation: scroll-right 18s linear infinite;
+    .get-btn {
+      padding: 10px 18px;
+      background-color: #bc5def;
+      border-radius: 25px;
+      color: white;
+      font-size: 18px;
+      transition: 0.3s;
     }
 
-    @keyframes scroll-left {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
+    .get-btn:hover {
+      background-color: #9c46d3;
     }
 
-    @keyframes scroll-right {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
+    /* === Background section starts here === */
+    .main-content {
+  height: calc(100vh - 80px); /* adjust if header height changes */
+  background: url('https://img.freepik.com/free-photo/front-view-woman-using-sign-language_23-2148572455.jpg') no-repeat center top;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  padding-top: 40px; /* JUGAAD: Push content down from top */
+}
+
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .content h1 {
+      font-size: 60px;
+      margin-bottom: 10px;
+      color: #bc5def;
+    }
+
+    .content h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .buttons button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: #ddd;
+      color: #333;
+      transition: 0.3s;
+    }
+
+    .buttons button.active,
+    .buttons button:hover {
+      background-color: #bc5def;
+      color: white;
+    }
+
+    .page-links {
+      margin-top: 20px;
+    }
+
+    .page-links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 16px;
+      background: #bc5def;
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .page-links a:hover {
+      background-color: #9c46d3;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="path/to/logo.png" alt="Karsaathi Logo" class="logo" />
-    <h1>🧏‍♂ Karsaathi - Learn and Convert Sign Language</h1>
+    <div class="logo">🧏‍♂ Karsathi</div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="converter.html">Converter</a>
-      <a href="learn.html">Learn</a>
-      <a href="community.html">Community</a>
-      <a href="login.html" id="loginLink">Login</a>
-      <a href="#" id="logoutLink" style="display: none;" onclick="logout()">Logout</a>
+      <a href="#how">How it works</a>
+      <a href="#mission">Our mission</a>
     </nav>
-    <select id="languageSelect" onchange="switchLanguage()">
-      <option value="en">English</option>
-      <option value="gu">Gujarati</option>
-    </select>
+    <a class="get-btn" href="#get">Get Extension</a>
   </header>
 
-  <main>
-    <section class="hero">
-      <h2>Learn and Convert Sign Language</h2>
-      <p>Convert Sign Language to English/Gujarati and Learn Easily</p>
-      <a class="btn" href="converter.html">Try Converter</a>
-    </section>
-  </main>
+  <section class="main-content">
+    <div class="overlay"></div>
 
-  <!-- ✅ Dual marquee stacked above footer -->
-  <div class="marquee-container">
-    <div class="marquee-line scroll-left">🎉 Welcome to Karsaathi - Your Sign Language Learning Companion!</div>
-    <div class="marquee-line scroll-right">🙌 Let's Learn and Convert Sign Language Together!</div>
-  </div>
+    <div class="content">
+      <h1>Sign Language</h1>
+      <h2>Translation</h2>
+
+      <div class="buttons">
+        <button class="active">Video Translation</button>
+        <button>Audio Translation</button>
+      </div>
+
+      <div class="page-links">
+        <h3>Explore Pages</h3>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="converter.html">Converter</a>
+        <a href="learn.html">Learn</a>
+        <a href="community.html">Community</a>
+      </div>
+    </div>
+  </section>
 
   <script>
-    // Translations
-    const translations = {
-      en: {
-        heading: "Learn and Convert Sign Language",
-        description: "Convert Sign Language to English/Gujarati and Learn Easily",
-        convertBtn: "Try Converter"
-      },
-      gu: {
-        heading: "સાંકેતિક ભાષા શીખો અને રૂપાંતર કરો",
-        description: "સાંકેતિક ભાષાને અંગ્રેજી/ગુજરાતીમાં રૂપાંતરિત કરો અને સરળતાથી શીખો",
-        convertBtn: "કન્વર્ટર અજમાવો"
-      }
-    };
+    const buttons = document.querySelectorAll(".buttons button");
 
-    function switchLanguage() {
-      const lang = document.getElementById("languageSelect").value;
-      document.querySelector(".hero h2").innerText = translations[lang].heading;
-      document.querySelector(".hero p").innerText = translations[lang].description;
-      document.querySelector(".hero a").innerText = translations[lang].convertBtn;
-    }
-
-    // 🔐 Login/Logout Toggle
-    const isLoggedIn = localStorage.getItem("loggedIn") === "true";
-    const loginLink = document.getElementById("loginLink");
-    const logoutLink = document.getElementById("logoutLink");
-
-    if (isLoggedIn) {
-      loginLink.style.display = "none";
-      logoutLink.style.display = "inline";
-    } else {
-      loginLink.style.display = "inline";
-      logoutLink.style.display = "none";
-    }
-
-    function logout() {
-      localStorage.removeItem("loggedIn");
-      alert("You have been logged out.");
-      window.location.href = "index.html";
-    }
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        buttons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        alert(`You selected ${btn.textContent} mode`);
+      });
+    });
   </script>
-
-  <footer>
-    <p>Made with ❤ for Hackathon 2025</p>
-  </footer>
 </body>
 </html>

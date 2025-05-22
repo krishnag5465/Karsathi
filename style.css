@@ -1,91 +1,86 @@
-body {
-  font-family: sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background: #535151;
-  background: #4f7782;
-background: linear-gradient(90deg, rgba(79, 119, 130, 1) 0%, rgba(87, 199, 133, 1) 46%, rgba(237, 221, 83, 1) 100%);
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f8ff;
+  color: #333;
 }
 
 header {
-  background-color: #255651;
-  color: rgb(177, 198, 201);
-  padding: 1rem;
-  text-align: center;
-  background: #020024;
-background: #020024;
-background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 39%, rgba(0, 212, 255, 1) 100%);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-nav a {
-  color: rgb(180, 215, 212);
-  margin: 0 15px;
-  text-decoration: none;
+.logo {
+  font-size: 1.8rem;
   font-weight: bold;
+  color: #6c63ff;
 }
 
-  .hero {
-  background-image: url('"C:/Users/krishna gupta/DownloadsChatGPT Image May 20, 2025, 11_17_30 PM.png"'); /* Apni image ka path do */
-  background-repeat: no-repeat;
-  background-position: center center; /* Image center mein rahegi */
-  background-size: contain; /* Image apne aspect ratio ke saath adjust hogi */
-  padding: 50px; /* Thoda space dekhne ke liye */
-  color: rgb(96, 114, 117); /* Agar background dark hai toh text white kar do */
-  text-align: center;
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
 }
 
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #26a69a;
-  color: white;
-  border-radius: 5px;
+nav ul li a {
   text-decoration: none;
+  color: #333;
+  font-weight: 500;
 }
 
-footer {
-  text-align: center;
-  background: #004d40;
+nav ul li .btn {
+  background-color: #6c63ff;
   color: white;
-  padding: 1rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #020024;
-background: #020024;
-background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 39%, rgba(0, 212, 255, 1) 100%);
-}
-.form-container {
-  max-width: 400px;
-  margin: 80px auto;
-  padding: 20px;
-  background-color: #449282;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
 }
 
-form input {
-  width: 100%;
-  margin: 10px 0;
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
 }
 
-form button {
-  width: 100%;
-  background-color: #00796b;
-  color: white;
-  padding: 12px;
+.hero-content h1 {
+  font-size: 3rem;
+  color: #4a4a4a;
+}
+
+.hero-content h1 span {
+  color: #6c63ff;
+}
+
+.buttons {
+  margin-top: 2rem;
+}
+
+.buttons button {
+  padding: 0.8rem 1.5rem;
+  margin-right: 1rem;
+  font-size: 1rem;
   border: none;
-  font-size: 16px;
-  border-radius: 6px;
+  border-radius: 25px;
   cursor: pointer;
+  background-color: #e0e0e0;
+  transition: background-color 0.3s ease;
 }
 
-form button:hover {
-  background-color: #004d40;
+.buttons button.active,
+.buttons button:hover {
+  background-color: #6c63ff;
+  color: white;
 }
 
+.hero-img img {
+  max-width: 400px;
+  border-radius: 10px;
+}
