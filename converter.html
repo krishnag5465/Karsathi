@@ -7,14 +7,53 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
       background: #f0f0f0;
       margin: 0;
-      padding: 20px;
+      padding-top: 70px; /* space for fixed header */
+      text-align: center;
     }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 28px;
+      color: #bc5def;
+    }
+
+  .nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 17px;
+  cursor: pointer; /* Makes it look clickable */
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #bc5def;
+  text-decoration: none; /* Ensure underline stays off even on hover */
+}
+
     h1 {
-      color: #333;
+      color:  #bc5def;
+      margin-top: 10px;
     }
+
     #video-container {
       margin: 20px auto;
       width: 640px;
@@ -24,11 +63,13 @@
       overflow: hidden;
       background: black;
     }
+
     video {
       width: 100%;
       height: auto;
       display: block;
     }
+
     #errorMsg {
       color: red;
       font-weight: bold;
@@ -37,6 +78,15 @@
   </style>
 </head>
 <body>
+
+  <header>
+    <div class="logo">🧏‍♂ Karsathi</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="learn.html">Learn</a>
+      <a href="community.html">Community</a>
+    </nav>
+  </header>
 
   <h1>Sign Language Converter - Webcam</h1>
   <div id="video-container">
