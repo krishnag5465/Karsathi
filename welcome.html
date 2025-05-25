@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome | Karsathi</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #a855f7, #6366f1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .welcome-container {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      padding: 50px 40px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      animation: fadeIn 2s ease-in-out;
+      max-width: 90%;
+      width: 500px;
+      color: white;
+    }
+
+    .welcome-container h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: #ffffff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .welcome-container p {
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+      color: #e0e0e0;
+    }
+
+    .start-btn {
+      background-color: white;
+      color: #7c3aed;
+      padding: 15px 40px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .start-btn:hover {
+      background-color: #f3e8ff;
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 600px) {
+      .welcome-container h1 {
+        font-size: 2.2rem;
+      }
+
+      .welcome-container p {
+        font-size: 1rem;
+      }
+
+      .start-btn {
+        padding: 12px 30px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-container">
+    <h1>Welcome to Karsathi</h1>
+    <p>Your AI-powered sign language learning and translator tool</p>
+    <button class="start-btn" onclick="goToApp()">Get Started</button>
+  </div>
+
+  <script>
+    function goToApp() {
+      window.location.href = "index.html"; 
+    }
+  </script>
+</body>
+</html>

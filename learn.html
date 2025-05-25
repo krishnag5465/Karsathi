@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Learn - Karsathi</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f8ff;
+      padding: 2rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: #da6fe8;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      font-size: 2rem;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🧏‍♂Karsathi-Learn</div>
+    <nav>
+      <ul>
+        <li><a href="converter.html">Converter</a></li>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h2>Learn Sign Language</h2>
+  <div class="grid">
+    <div class="card">A</div>
+    <div class="card">B</div>
+    <div class="card">C</div>
+    <div class="card">D</div>
+    <div class="card">E</div>
+    <div class="card">F</div>
+    <!-- Add more letters as needed -->
+  </div>
+  <script>
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const letter = card.textContent;
+      const utterance = new SpeechSynthesisUtterance(letter);
+      speechSynthesis.speak(utterance);
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Signapse</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #e3f2fd, #f3e5f5);
+      margin: 0;
+      padding-top: 70px; /* space for header */
+       padding-top: 10%;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding:20px 50px;
+      z-index: 1000;
+     
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 36px;
+      color: #bc5def;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #bc5def;
+    }
+
+    .auth-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+      margin: auto;
+    }
+
+    .auth-container h2 {
+      margin-bottom: 0.5rem;
+      font-size: 26px;
+      color: #333;
+    }
+
+    .auth-container small {
+      display: block;
+      margin-bottom: 1.5rem;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .hand-gif {
+      width: 70px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #bc5def;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
+      position: relative;
+    }
+
+    button:hover {
+      background-color: #9b48cb;
+    }
+
+    button::after {
+      content: attr(data-tooltip);
+      visibility: hidden;
+      opacity: 0;
+      background: #222;
+      color: #fff;
+      padding: 5px 8px;
+      border-radius: 6px;
+      position: absolute;
+      transform: translateY(-120%);
+      font-size: 12px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover::after {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    p {
+      margin-top: 1rem;
+      font-size: 14px;
+    }
+
+    a {
+      color: #bc5def;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">🧏‍♂ Karsathi</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="learn.html">Learn</a>
+    </nav>
+  </header>
+
+  <div class="auth-container">
+    <img src="https://media.giphy.com/media/3o7TKzYqJjyQ4qz3iI/giphy.gif" alt="Sign Hello" class="hand-gif" />
+    <h2>Login to Karsathi</h2>
+    <small>Empowering through sign language</small>
+    <form>
+      <input type="email" placeholder="Email" required aria-label="Email" />
+      <input type="password" placeholder="Password" required aria-label="Password" />
+      <button type="submit" data-tooltip="Click to Sign In">Login</button>
+      <p>Don't have an account? <a href="register.html">Register</a></p>
+    </form>
+  </div>
+
+  <script>
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = form.querySelector('input[type="email"]').value;
+      const password = form.querySelector('input[type="password"]').value;
+
+      if (email && password) {
+        alert("Login successful (dummy)");
+        // window.location.href = "home.html"; // uncomment this if needed
+      } else {
+        alert("Please fill all fields.");
+      }
+    });
+  </script>
+</body>
+</html>

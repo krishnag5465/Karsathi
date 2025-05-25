@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Language Translator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 36px;
+      font-weight: bold;
+      color: #bc5def;
+    }
+
+    nav a, .get-btn {
+      margin: 0 10px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .get-btn {
+      padding: 10px 18px;
+      background-color: #bc5def;
+      border-radius: 25px;
+      color: white;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .get-btn:hover {
+      background-color: #9c46d3;
+    }
+
+    /* === Background section starts here === */
+    .main-content {
+  height: calc(100vh - 80px); /* adjust if header height changes */
+  background: url('https://img.freepik.com/free-photo/front-view-woman-using-sign-language_23-2148572455.jpg') no-repeat center top;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  padding-top: 40px; /* JUGAAD: Push content down from top */
+}
+
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .content h1 {
+      font-size: 60px;
+      margin-bottom: 10px;
+      color: #bc5def;
+    }
+
+    .content h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .buttons button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: #ddd;
+      color: #333;
+      transition: 0.3s;
+    }
+
+    .buttons button.active,
+    .buttons button:hover {
+      background-color: #bc5def;
+      color: white;
+    }
+
+    .page-links {
+      margin-top: 20px;
+    }
+
+    .page-links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 16px;
+      background: #bc5def;
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .page-links a:hover {
+      background-color: #9c46d3;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">🧏‍♂ Karsathi</div>
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#mission">Our mission</a>
+    </nav>
+    <a class="get-btn" href="#get">Get Extension</a>
+  </header>
+
+  <section class="main-content">
+    <div class="overlay"></div>
+
+    <div class="content">
+      <h1>Sign Language</h1>
+      <h2>Translation</h2>
+
+      <div class="buttons">
+        <button class="active">Video Translation</button>
+        <button>Audio Translation</button>
+      </div>
+
+      <div class="page-links">
+        <h3>Explore Pages</h3>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="converter.html">Converter</a>
+        <a href="learn.html">Learn</a>
+        <a href="community.html">Community</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const buttons = document.querySelectorAll(".buttons button");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        buttons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        alert(`You selected ${btn.textContent} mode`);
+      });
+    });
+  </script>
+</body>
+</html>
